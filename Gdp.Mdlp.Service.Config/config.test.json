@@ -1,0 +1,30 @@
+{
+  "MdlpApi": "https://api.mdlp.crpt.ru/api/v1/",
+  "BussyQueueWaitInterval": 1000,
+  "Event": {
+    "RefreshInterval": 5000,
+    "EventsTile": 10,
+    "MinPriority": 0,
+    "ConnectionString": "Data Source=SQLSERVERA3\\SRVHARMON;Initial Catalog=Mdlp;Integrated Security=True"
+  },
+  "Mdlp": {
+    "RefreshInterval": 5000,
+    "ApiErrorRecoverInterval": 500,
+    "ReloginInterval": 1500,
+    "RequestsTile": 10,
+    "CacheTickets": true,
+    "CacheIncomes": true,
+    "MinPriority": 0,
+    "Connections": [
+      {
+        "AccountSystem": {
+          "Name": "GDP.MDLP.TEST",
+          "ClientId": "a2ecd08f-977e-49e8-9c00-4f842d292fbf",
+          "ClientSecret": "4037754d-c993-48f1-b158-e9d041f618f1",
+          "Thumbprint": "855BE399A76F4523502CCA06F43BB49BB0A38A5B"
+        },
+        "Disabled": false
+      }
+    ]
+  }
+}

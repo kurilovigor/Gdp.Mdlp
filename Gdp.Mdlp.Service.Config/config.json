@@ -1,0 +1,208 @@
+{
+  "MdlpApi": "https://api.mdlp.crpt.ru/api/v1/",
+  "BussyQueueWaitInterval": 1000,
+  "Event": {
+    "RefreshInterval": 5000,
+    "EventsTile": 10,
+    "MinPriority": 0,
+    "ConnectionString": "Data Source=SQLSERVERA3\\SRVHARMON;Initial Catalog=Mdlp;Integrated Security=True"
+  },
+  "Mdlp": {
+    "RefreshInterval": 5000,
+    "ApiErrorRecoverInterval": 500,
+    "ReloginInterval": 1500,
+    "RequestsTile": 10,
+    "CacheTickets": false,
+    "CacheIncomes": false,
+    "MinPriority": 0,
+    "Connections": [
+      {
+        "AccountSystem": {
+          "Name": "GDP.MDLP",
+          "ClientId": "a6682ac3-f86e-4e4c-969a-5f50719bbc9a",
+          "ClientSecret": "755cc62e-5729-41df-ac4e-19b214362abc",
+          "Thumbprint": "855BE399A76F4523502CCA06F43BB49BB0A38A5B"
+        },
+        "Disabled": false
+      },
+      {
+        "AccountSystem": {
+          "Name": "GDPPlus.MDLP",
+          "ClientId": "c6dd674f-bf58-43ae-a16d-12ea32e3b1dd",
+          "ClientSecret": "d659a39d-c98d-4b56-afd1-50d765a94166",
+          "Thumbprint": "C831DEEA1F9984EF1794E2C34450F2A2560B7F0E"
+        },
+        "Disabled": false
+      },
+      {
+        "AccountSystem": {
+          "Name": "OmegPharm.MDLP",
+          "ClientId": "57cb247d-bdc5-4b2c-91ba-f2a716f09e97",
+          "ClientSecret": "0fca1b2e-b5e3-4b36-9ef7-c42e89bb5cc5",
+          "Thumbprint": "B7C542A84E883CC6AF06C9DD2751AA05AE63CFBC"
+        },
+        "Disabled": false
+      },
+      {
+        "AccountSystem": {
+          "Name": "Pharma.MDLP",
+          "ClientId": "ddf32085-1a99-484e-8dd4-00fdb9be5522",
+          "ClientSecret": "0cae6e20-91f3-4399-bfc5-9aaf4c8fb2c4",
+          "Thumbprint": "93F403A31DC8DB32C15D4D4E3E3043A391BF4835"
+        },
+        "Disabled": false
+      },
+      {
+        "AccountSystem": {
+          "Name": "Novapharm.MDLP",
+          "ClientId": "c72bee76-8705-457a-9aed-0515c546602a",
+          "ClientSecret": "f4ba6051-6e59-40bb-ad7e-bd3b1dab4f96",
+          "Thumbprint": "98A0F7DD7A66F09E5DEFB8E73BE61F05ACA9B8AD"
+        },
+        "Disabled": false
+      },
+      {
+        "AccountSystem": {
+          "Name": "Medsnab.MDLP",
+          "ClientId": "751328b3-ddaf-4178-bf27-4c1061c00c0f",
+          "ClientSecret": "2bfb1f2a-cd10-4187-85fe-ae4112b46228",
+          "Thumbprint": "9E1DEAC7F2A16064906B1A9931338006479567DA"
+        },
+        "Disabled": false
+      }
+    ]
+  },
+  "WebApi": {
+    "Uri": "http://localhost:8081"
+  }
+  "AddonFactories": [
+    {
+      "Id": "ProcessIncomes",
+      "Addons": [
+        {
+          "Id": "601",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessIncome.MoveOrderNotification, Gdp.Mdlp.Service.BaseExtensions"
+        },
+        {
+          "Id": "602",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessIncome.ReceiveOrderNotification, Gdp.Mdlp.Service.BaseExtensions"
+        },
+        {
+          "Id": "605",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessIncome.RefusalSenderNotification, Gdp.Mdlp.Service.BaseExtensions"
+        },
+        {
+          "Id": "606",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessIncome.RefusalReceiverNotification, Gdp.Mdlp.Service.BaseExtensions"
+        },
+        {
+          "Id": "607",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessIncome.AcceptNotification, Gdp.Mdlp.Service.BaseExtensions"
+        },
+        {
+          "Id": "617",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessIncome.ReceiveOrderErrorsNotification, Gdp.Mdlp.Service.BaseExtensions"
+        },
+        {
+          "Id": "627",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessIncome.PostingNotification, Gdp.Mdlp.Service.BaseExtensions"
+        }
+      ]
+    },
+    {
+      "Id": "ProcessEvents",
+      "Addons": [
+        {
+          "Id": "Unpack",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessEvents.ProcessUnpack, Gdp.Mdlp.Service.BaseExtensions"
+        },
+        {
+          "Id": "QueryKizInfo",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessEvents.ProcessQueryKizInfo, Gdp.Mdlp.Service.BaseExtensions"
+        },
+        {
+          "Id": "Receiping",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessEvents.ProcessReceiping, Gdp.Mdlp.Service.BaseExtensions"
+        },
+        {
+          "Id": "TicketOperation",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessEvents.ProcessTicketOperation, Gdp.Mdlp.Service.BaseExtensions"
+        },
+        {
+          "Id": "QueryHierarchyInfo",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessEvents.ProcessQueryHierarchyInfo, Gdp.Mdlp.Service.BaseExtensions"
+        },
+        {
+          "Id": "Posting",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessEvents.ProcessPosting, Gdp.Mdlp.Service.BaseExtensions"
+        },
+        {
+          "Id": "Accept",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessEvents.ProcessAccept, Gdp.Mdlp.Service.BaseExtensions"
+        },
+        {
+          "Id": "RefusalSender",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessEvents.ProcessRefusalSender, Gdp.Mdlp.Service.BaseExtensions"
+        }
+      ]
+    },
+    {
+      "Id": "ProcessRequest",
+      "Addons": [
+        {
+          "Id": "210",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessRequest.QueryKizInfo, Gdp.Mdlp.Service.BaseExtensions"
+        },
+        {
+          "Id": "912",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessRequest.Unpack, Gdp.Mdlp.Service.BaseExtensions"
+        },
+        {
+          "Id": "701",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessRequest.Accept, Gdp.Mdlp.Service.BaseExtensions"
+        },
+        {
+          "Id": "415",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessRequest.MoveOrder, Gdp.Mdlp.Service.BaseExtensions"
+        },
+        {
+          "Id": "416",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessRequest.ReceiveOrder, Gdp.Mdlp.Service.BaseExtensions"
+        },
+        {
+          "Id": "220",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessRequest.QueryHierarchyInfo, Gdp.Mdlp.Service.BaseExtensions"
+        },
+        {
+          "Id": "702",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessRequest.Posting, Gdp.Mdlp.Service.BaseExtensions"
+        },
+        {
+          "Id": "251",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessRequest.RefusalSender, Gdp.Mdlp.Service.BaseExtensions"
+        }
+      ]
+    },
+    {
+      "Id": "ProcessTicket",
+      "Addons": [
+        {
+          "Id": "211",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessTicket.KizInfo, Gdp.Mdlp.Service.BaseExtensions"
+        },
+        {
+          "Id": "200",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessTicket.Operation, Gdp.Mdlp.Service.BaseExtensions"
+        },
+        {
+          "Id": "607",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessTicket.AcceptNotification, Gdp.Mdlp.Service.BaseExtensions"
+        },
+        {
+          "Id": "221",
+          "Type": "Gdp.Mdlp.Service.BaseExtensions.ProcessTicket.HierarchyInfo, Gdp.Mdlp.Service.BaseExtensions"
+        }
+      ]
+    }
+  ]
+}
